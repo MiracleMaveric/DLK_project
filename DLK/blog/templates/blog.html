@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block static_files %}
+        <link rel="stylesheet" href="{% static 'css/common.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css">
+        <link rel="stylesheet" href="./common/static/css/normalize.css" type="text/css">
+    {% endblock static_files %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Blog</title>
+</head>
+<body>
+    <header class="header container">
+        <img class="header__logo" src="./img/Union.png" alt="logo">
+        <ul class="header__list">
+            <li class="header__list__item undotted"><a class="header__list__link a" href="./blog.html">BLOG</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="./catalog.html">CATALOG</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="#">ABOUT US</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="./User profile.html">USER PROFILE</a></li>
+        </ul>
+        <img class="header__image" src="./img/Loupe.png" alt="search">
+        <a class="header__link js_btn a" href="./ContactUs.html">CONTACT US</a>
+    </header>
+    <main>
+        <section class="where container">
+            <h1 class="where__title">BLOG</h1>
+            <div class="first__wrap">
+                <a class="where__link a" href="./index.html">Home</a>
+                <img class="where__image" src="./img/arrow.png" alt="arrow">
+                <p class="where__description">Blog</p>
+            </div>
+        </section>
+        <div class="articles container">
+            <ul class="articles__list">
+                <li class="articles__list__item undotted">
+                    <img class="articles__list__image" src="./img/lego.jpg" alt="Bunch of Lego">
+                    <p class="articles__list__date">23rd August 2018</p>
+                    <h2 class="articles__list__title">Top 5 fastest growing it service companies in philly</h2>
+                    <p class="articles__list__description">Direct Line Development’s Team is excited to announce that we received UpCity’s 2019 Local Excellence Award! This prestigious award is annually presented to the Top 1% of service providers in the given marketplace.</p>
+                </li>
+                <li class="articles__list__item undotted">
+                    <img class="articles__list__image" src="./img/soft_dolls.jpg" alt="Squeezy toys">
+                    <p class="articles__list__date">23rd August 2018</p>
+                    <h2 class="articles__list__title">Best financial</h2>
+                    <p class="articles__list__description">Direct Line Development is honored to be recognized as one of the Top 100 Fastest Growing Companies 2019 in Philadelphia, according to Growjo’s ranking.</p>
+                </li>
+                <li class="articles__list__item undotted">
+                    <img class="articles__list__image" src="./img/constructor.jpg" alt="Toys for kids">
+                    <p class="articles__list__date">23rd August 2018</p>
+                    <h2 class="articles__list__title">Company logo or brand identity: which one is more important? brand identity</h2>
+                    <p class="articles__list__description">To survive in the world of digital marketing, you need to keep up with the latest SEO trends. Here are our simple, but effective, SEO tips for small business success.</p>
+                </li>
+            </ul>
+            <ul class="articles__list">
+                <li class="articles__list__item undotted">
+                    <img class="articles__list__image" src="./img/buzz_lighter.jpg" alt="Buzz Lighter toy">
+                    <p class="articles__list__date">23rd August 2018</p>
+                    <h2 class="articles__list__title">Best financial</h2>
+                    <p class="articles__list__description">Direct Line Development is honored to be recognized as one of the Top 100 Fastest Growing Companies 2019 in Philadelphia, according to Growjo’s ranking.</p>
+                </li>
+                <li class="articles__list__item undotted">
+                    <img class="articles__list__image" src="./img/rapunzel.jpg" alt="Rapunzel toy">
+                    <p class="articles__list__date">23rd August 2018</p>
+                    <h2 class="articles__list__title">Company logo or brand identity: which one is more important? brand identity</h2>
+                    <p class="articles__list__description">To survive in the world of digital marketing, you need to keep up with the latest SEO trends. Here are our simple, but effective, SEO tips for small business success.</p>
+                </li>
+                <li class="articles__list__item undotted">
+                    <img class="articles__list__image" src="./img/diamonds.jpg" alt="Cut diamonds">
+                    <p class="articles__list__date">23rd August 2018</p>
+                    <h2 class="articles__list__title">Top 5 fastest growing it service companies in philly</h2>
+                    <p class="articles__list__description">Direct Line Development’s Team is excited to announce that we received UpCity’s 2019 Local Excellence Award! This prestigious award is annually presented to the Top 1% of service providers in the given marketplace.</p>
+                </li>
+            </ul>
+            <ul class="catalog__list2">
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page1" type="button">1</button>
+                </li>
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page2" type="button">2</button>
+                </li>
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page2" type="button">3</button>
+                </li>
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page2" type="button">4</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer class="footer__blog">
+        <section class="third__wrap container">
+            <h2 class="hidden">Nado</h2>
+            <section class="footer__inner">
+                <h2 class="footer__inner__title">Navigation</h2>
+                <img class="short__line" src="./img/Line.png" alt="line">
+                <ul class="footer__inner__list">
+                    <li class="footer__inner__list__item__first undotted"><a class="footer__inner__list__link a" href="#">About Us</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Blog</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Design Services</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Featured On</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">2018 Holiday Catalog</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Shop By Designer</a></li>
+                </ul>
+            </section>
+            <section class="footer__inner">
+                <h2 class="footer__inner__title">Customer Information</h2>
+                <img class="short__line" src="./img/Line.png" alt="line">
+                <ul class="footer__inner__list">
+                    <li class="footer__inner__list__item__first undotted"><a class="footer__inner__list__link a" href="#">Contact Us</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Sale Exclusions</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Shipping & Returns</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Shipping & Returns</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Privacy Policy</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Search</a></li>
+                </ul>
+            </section>
+            <section class="footer__inner">
+                <h2 class="footer__inner__title">Connect</h2>
+                <img class="short__line" src="./img/Line.png" alt="line">
+                <form class="email" action="handler.php">
+                    <label class="email__frame" for="username1"><input class="type__area" type="text" id="username1" placeholder="Email"></label>
+                    <button class="footer__button special__write a" type="button">JOIN</button>
+                </form>
+                <ul class="footer__inner__list__partners">
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="./img/Facebook.png" alt="facebook logo"></a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="./img/Twitter.png" alt="twitter logo"></a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="./img/Pinterest.png" alt="some logo"></a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="./img/Instagram.png" alt="instagram logo"></a></li>
+                </ul>
+            </section>
+        </section>
+        <div class="container">
+            <img class="long__line container" src="./img/Long_line.png" alt="long_line">
+        </div>
+        <section class="footer__inner__bottom container">
+            <h2 class="hidden">Something needed</h2>
+            <div class="last__wrap">
+                <p class="footer__inner__description">Company rating</p>
+                <ul class="footer__inner__list__stars">
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="./img/Star.png" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="./img/Star.png" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="./img/Star.png" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="./img/Star.png" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="./img/Star.png" alt="star"></li>
+                </ul>
+                <p class="footer__inner__description__k">Copyright © 2018 Dlk • Design Life Kids</p>
+                <p class="footer__inner__description__d">Web Design — Direct Line Development</p>
+            </div>
+        </section>
+    </footer>
+    <div class="popup">
+        <div class="fade">
+            <form class="userdata" action="handler.php">
+                <div class="last_wrap">
+                    <label class="userdata__frame otstup" for="username">Name</label>
+                    <input class="text1" type="text">
+                </div>
+                <div class="special_wrap">
+                    <div class="perfect_wrap">
+                        <label class="userdata__frame" for="username">Phone</label>
+                        <input class="text2" type="text">
+                    </div>
+                    <div class="perfect_wrap">
+                        <label class="userdata__frame" for="username">Email</label>
+                        <input class="text3" type="text">
+                    </div>
+                </div>
+                <div class="last_wrap">
+                    <label class="userdata__frame" for="username">Message</label>
+                    <input class="text4" type="text">
+                </div>
+                <div class="accept_setting">
+                    <input class="check" type="checkbox" id="accept" value="yes">
+                    <label class="condition" for="accept">By clicking on the button, you consent to the processing of your personal data</label>
+                </div>
+                <div class="needed"><button class="special__button special__write button_wrap" type="button">SUBMIT</button></div>
+                <button type="button" class="exit"><img class="cross" src="./common_icons/exit_sign.png" alt="exit"></button>
+            </form>
+        </div>
+    </div>
+    <script src="./common_js/common.js"></script>
+</body>
+</html>

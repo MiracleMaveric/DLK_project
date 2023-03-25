@@ -1,0 +1,76 @@
+.footer__blog {
+    margin-top: 85px;
+    background-color: #434343;
+}
+
+.where__title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: #1E0606;
+}
+
+.where__link {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #1E0606;
+}
+
+.where__description {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #1E0606;
+    opacity: 0.5;
+}
+
+.articles {
+    margin-top: -20px;
+}
+
+.articles__list__date {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #818181;
+    mix-blend-mode: normal;
+}
+
+.articles__list__item {
+    max-width: 550px;
+}
+
+.articles__list__title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: #1E0606;
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+
+.articles__list__description {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #1E0606;
+}
+
+.articles__list {
+    display: flex;
+    gap: 20px;
+    margin-left: -40px;
+}

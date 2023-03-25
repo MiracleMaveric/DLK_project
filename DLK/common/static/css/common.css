@@ -1,0 +1,255 @@
+.a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.undotted {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.header__logo {
+    width: 100.08px;
+    height: 52px;
+    margin-right: 20px;
+}
+
+.header__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: auto;
+}
+
+.header__list__link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #1E0606;
+}
+
+.header__link {
+    display: inline;
+    margin-left: 23.48px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    color: #1E0606;
+}
+
+.special__button {
+    display: inline-block;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 26px;
+    padding-right: 26px;
+    background: #000000;
+}
+
+.special__write {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.third__wrap {
+    display: flex;
+    gap: 25px;
+}
+
+.footer__inner__bottom {
+    display: flex;
+}
+
+.footer__inner__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #AAAAAA;
+}
+
+.footer__inner__list__link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.short__line {
+    width: 374px;
+    height: 1px;
+}
+
+.footer__inner {
+    margin-top: 100px;
+}
+
+.footer__inner__list {
+    margin-left: -40px;
+}
+
+.footer__inner__list__item {
+    margin-top: 15px;
+}
+
+.footer__inner__list__item__first {
+    margin-top: 23px;
+}
+
+.email {
+    display: flex;
+    margin-top: 23px;
+}
+
+.footer__button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 22px;
+    padding-right: 22px;
+    background: #000000;
+}
+
+.type__area {
+    width: 250px;
+    height: 40px;
+    background-color: #666666;
+    border: none;
+}
+
+.type__area::placeholder {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120px;
+    position: relative;
+    left: 10px;
+    top: 2px;
+    color: #EBEBEB;
+}
+
+.footer__inner__description {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.footer__inner__description__k {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 30px;
+    margin-right: 77.5px;
+    color: #FFFFFF;
+}
+
+.footer__inner__description__d {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 33px;
+    color: #A2A2A2;
+}
+
+.footer__inner__list__partners {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+    margin-left: -40px;
+}
+
+.footer__inner__list__image {
+    width: 30px;
+    height: 30px;
+}
+
+.long__line {
+    width: 1172px;
+    height: 1px;
+}
+
+.footer__inner__list__stars {
+    display: flex;
+    gap: 4px;
+    margin-right: 133.5px;
+    margin-left: -10px;
+    margin-top: 5px;
+}
+
+.last__wrap {
+    display: flex;
+    margin-top: 12px;
+    padding-bottom: 103px;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background: rgba(125, 151, 218, 0.8);
+    z-index: 5;
+}
+
+.open {
+    display: flex;
+}
+
+.exit {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    left: 646px;
+    top: 0px;
+}
+
+.cross {
+    width: 10px;
+    height: 10px;
+}
+
+.fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: rgba(125, 151, 218, 0.8);
+}
+
+.footer {
+    margin-top: 205px;
+    background-color: #434343;
+}
