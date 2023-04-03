@@ -14,6 +14,7 @@ class LoginForm(AuthenticationForm):
         strip=False,
         widget=forms.PasswordInput(attrs={
             'autocomplete': 'current-password',
+            'placeholder': _('Password'),
             'class': 'form-control',
         })
     )
