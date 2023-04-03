@@ -1,0 +1,129 @@
+.text11 {
+    width: 600px;
+    height: 45px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.text22 {
+    width: 290px;
+    height: 45px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.text33 {
+    width: 290px;
+    height: 45px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.text44 {
+    width: 600px;
+    height: 45px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popupup {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background: rgba(125, 151, 218, 0.8);
+    z-index: 5;
+}
+
+.fadede {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: rgba(125, 151, 218, 0.8);
+}
+
+.userdatata {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: left;
+    background: #E5EAF8;
+    position: absolute;
+    left: 25%;
+    top: 13%;
+}
+
+.last_wrapap {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.otstupup {
+    padding-top: 40px;
+}
+
+.userdata___frame {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #1E0606;
+}
+
+.perfect_wrapap {
+    display: flex;
+    flex-direction: column;
+}
+
+.special_wrapap {
+    display: flex;
+    gap: 14px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.accept_settingng {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.checkck {
+    margin-left: 30px;
+}
+
+.conditionon {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #1E0606;
+}
+
+.neededed {
+    display: inline-block;
+    padding-bottom: 40px;
+    padding-left: 10px;
+}
+
+.button_wrapapap {
+    margin-left: 20px;
+}
+
+.bub {
+    margin-top: 15px;
+}
+
+.greeting {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 19px;
+    color: #1E0606;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: -30px;
+}

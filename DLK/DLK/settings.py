@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'core',
     'index',
     'blog',
+    'catalog',
+    'toys',
+    'ContactUs',
+    'user_profile',
 ]
 
 AUTH_USER_MODEL = 'core.CustomUser'
@@ -59,7 +63,14 @@ ROOT_URLCONF = 'DLK.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "index/templates/index",
+            BASE_DIR / "blog/templates/blog",
+            BASE_DIR / "catalog/templates/catalog",
+            BASE_DIR / "toys/templates/toys",
+            BASE_DIR / "ContactUs/templates/ContactUs",
+            BASE_DIR / "core/templates/core",
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

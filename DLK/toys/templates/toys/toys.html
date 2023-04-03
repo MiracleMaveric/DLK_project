@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block static_files %}
+        <link rel="stylesheet" href="{% static 'css/common.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/toys.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/ContactUs.css' %}" type="text/css">
+    {% endblock static_files %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Toys</title>
+</head>
+<body>
+    <header class="header container">
+        <img class="header__logo" src="{% static 'img/Union.png' %}" alt="logo">
+        <ul class="header__list">
+            <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'blog:index' %}">BLOG</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'catalog:index' %}">CATALOG</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'toys:index' %}">TOYS</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="#">ABOUT US</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="./User profile.html">USER PROFILE</a></li>
+        </ul>
+        <img class="header__image" src="{% static 'img/Loupe.png' %}" alt="search">
+        <a class="header__link a" href="{% url 'ContactUs:index' %}">CONTACT US</a>
+    </header>
+    <main>
+        <section class="where container">
+            <h1 class="where__title">Toy for kids</h1>
+            <div class="first__wrap">
+                <a class="where__link a" href="{% url 'main:index' %}">Home</a>
+                <img class="where__image" src="{% static 'img/arrow.png' %}" alt="arrow">
+                <a class="where__link a" href="{% url 'catalog:index' %}">Catalog</a>
+                <img class="where__image" src="{% static 'img/arrow.png' %}" alt="arrow">
+                <p class="where__description">Toys</p>
+            </div>
+        </section>
+        <section class="back">
+            <h2 class="hidden">nado</h2>
+            <section class="setting container">
+                <h2 class="hidden">Something</h2>
+                <form class="form_1" action="settings">
+                    <h2 class="naming">Cost</h2>
+                    <input class="runner" type="range" min="0" max="500">
+                    <p class="min_meaning">0</p>
+                    <p class="max_meaning">500</p>
+                </form>
+                <form class="form_2" action="settings">
+                    <h2 class="naming">Color</h2>
+                    <div class="boxes">
+                        <div class="box__in__boxes">
+                            <input type="checkbox" id="Black" name="Black" value="yes">
+                            <label class="box_naming" for="Black">Black</label>
+                        </div>
+                        <div class="box__in__boxes">
+                            <input type="checkbox" id="Blue" name="Blue" value="yes">
+                            <label class="box_naming" for="Blue">Blue</label>
+                        </div>
+                        <div class="box__in__boxes">
+                            <input type="checkbox" id="Green" name="Green" value="yes">
+                            <label class="box_naming" for="Green">Green</label>
+                        </div>
+                        <div class="box__in__boxes">
+                            <input type="checkbox" id="White" name="White" value="yes">
+                            <label class="box_naming" for="White">White</label>
+                        </div>
+                    </div>
+                </form>
+                <form class="form_3" action="settings">
+                    <h2 class="naming">Delivery</h2>
+                    <div class="boxes">
+                        <div class="box__in__boxes">
+                            <input type="radio" id="1" name="ahaha" value="yes">
+                            <label class="box_naming" for="1">Free shipping</label>
+                        </div>
+                        <div class="box__in__boxes">
+                            <input type="radio" id="2" name="ahaha" value="yes">
+                            <label class="box_naming" for="2">Fast shipping</label>
+                        </div>
+                    </div>
+                </form>
+                <form class="form_4" action="settings">
+                    <h2 class="naming">Amount</h2>
+                    <div class="difficult">
+                        <input type="radio" id="11" name="hehehe" value="yes">
+                        <label class="box_naming b" for="11">05-10</label>
+                        <input type="radio" id="22" name="hehehe" value="yes">
+                        <label class="box_naming b" for="22">10-20</label>
+                        <input type="radio" name="hehehe" id="33" value="yes">
+                        <label class="box_naming b" for="33">20-50</label>
+                    </div>
+                </form>
+                <section class="bottom_wrap">
+                    <h2 class="hidden">nado</h2>
+                    <button class="setting__button special__write" type="button">APPLY</button>
+                </section>
+            </section>
+        </section>
+        <div class="catalog container">
+            <h2 class="hidden">Something</h2>
+            <ul class="catalog__list onemore">
+                <li class="catalog__list__item undotted">
+                    <img class="catalog__list__image" src="{% static 'img/Shark.png' %}" alt="SHARKY BEAN BAG CHAIR COVER">
+                    <h2 class="catalog__list__title2">SHARKY BEAN BAG CHAIR COVER</h2>
+                    <p class="catalog__list__description">$60.00 USD</p>
+                </li>
+                <li class="catalog__list__item undotted">
+                    <img class="catalog__list__image" src="{% static 'img/Brass_frames.png' %}" alt="BRASS DECO FRAMES">
+                    <h2 class="catalog__list__title2">BRASS DECO FRAMES</h2>
+                    <p class="catalog__list__description">$66.00 USD</p>
+                </li>
+                <li class="catalog__list__item undotted">
+                    <img class="catalog__list__image" src="{% static 'img/Arron.png' %}" alt="CIBO FULL APRON">
+                    <h2 class="catalog__list__title2">CIBO FULL APRON</h2>
+                    <p class="catalog__list__description">$60.00 USD</p>
+                </li>
+            </ul>
+            <ul class="catalog__list">
+                <li class="catalog__list__item undotted">
+                    <img class="catalog__list__image" src="{% static 'img/Gumballs.png' %}" alt="GATCHA GATCHA GUMBALL MACHINE">
+                    <h2 class="catalog__list__title2">GATCHA GATCHA GUMBALL MACHINE</h2>
+                    <p class="catalog__list__description">$56.00 USD</p>
+                </li>
+                <li class="catalog__list__item undotted">
+                    <img class="catalog__list__image" src="{% static 'img/Candle.png' %}" alt="CHRISTMAS ADVENT SCENTED CANDLE">
+                    <h2 class="catalog__list__title2">CHRISTMAS ADVENT SCENTED CANDLE</h2>
+                    <p class="catalog__list__description">$29.00 USD</p>
+                </li>
+                <li class="catalog__list__item undotted">
+                    <img class="catalog__list__image" src="{% static 'img/Tea_light.png' %}" alt="TANGLE SPINNING TEA LIGHT">
+                    <h2 class="catalog__list__title2">TANGLE SPINNING TEA LIGHT</h2>
+                    <p class="catalog__list__description">$56.00 USD</p>
+                </li>
+            </ul>
+            <ul class="catalog__list2 container">
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page1" type="button">1</button>
+                </li>
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page2" type="button">2</button>
+                </li>
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page2" type="button">3</button>
+                </li>
+                <li class="catalog__list2__item undotted">
+                    <button class="catalog__list2__page2" type="button">4</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer class="footer">
+        <section class="third__wrap container">
+            <h2 class="hidden">Nado</h2>
+            <section class="footer__inner">
+                <h2 class="footer__inner__title">Navigation</h2>
+                <img class="short__line" src="{% static 'img/Line.png' %}" alt="line">
+                <ul class="footer__inner__list">
+                    <li class="footer__inner__list__item__first undotted"><a class="footer__inner__list__link a" href="#">About Us</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Blog</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Design Services</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Featured On</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">2018 Holiday Catalog</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Shop By Designer</a></li>
+                </ul>
+            </section>
+            <section class="footer__inner">
+                <h2 class="footer__inner__title">Customer Information</h2>
+                <img class="short__line" src="{% static 'img/Line.png' %}" alt="line">
+                <ul class="footer__inner__list">
+                    <li class="footer__inner__list__item__first undotted"><a class="footer__inner__list__link a" href="#">Contact Us</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Sale Exclusions</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Shipping & Returns</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Shipping & Returns</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Privacy Policy</a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#">Search</a></li>
+                </ul>
+            </section>
+            <section class="footer__inner">
+                <h2 class="footer__inner__title">Connect</h2>
+                <img class="short__line" src="{% static 'img/Line.png' %}" alt="line">
+                <form class="email" action="handler.php">
+                    <label class="email__frame" for="username1"><input class="type__area" type="text" id="username1" placeholder="Email"></label>
+                    <button class="footer__button special__write a" type="button">JOIN</button>
+                </form>
+                <ul class="footer__inner__list__partners">
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="{% static 'img/Facebook.png' %}" alt="facebook logo"></a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="{% static 'img/Twitter.png' %}" alt="twitter logo"></a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="{% static 'img/Pinterest.png' %}" alt="some logo"></a></li>
+                    <li class="footer__inner__list__item undotted"><a class="footer__inner__list__link a" href="#"><img class="footer__inner__list__image" src="{% static 'img/Instagram.png' %}" alt="instagram logo"></a></li>
+                </ul>
+            </section>
+        </section>
+        <div class="container">
+            <img class="long__line container" src="{% static 'img/Long_Line.png' %}" alt="long_line">
+        </div>
+        <section class="footer__inner__bottom container">
+            <h2 class="hidden">Something needed</h2>
+            <div class="last__wrap">
+                <p class="footer__inner__description">Company rating</p>
+                <ul class="footer__inner__list__stars">
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="{% static 'img/Star.png' %}" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="{% static 'img/Star.png' %}" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="{% static 'img/Star.png' %}" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="{% static 'img/Star.png' %}" alt="star"></li>
+                    <li class="footer__inner__list__item undotted"><img class="footer__inner__image" src="{% static 'img/Star.png' %}" alt="star"></li>
+                </ul>
+                <p class="footer__inner__description__k">Copyright © 2018 Dlk • Design Life Kids</p>
+                <p class="footer__inner__description__d">Web Design — Direct Line Development</p>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
