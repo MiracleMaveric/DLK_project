@@ -1,11 +1,12 @@
 from django.contrib.auth import authenticate
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, DetailView
-from .forms import LoginForm
+from .forms import LoginForm, SignUpForm
 from .models import CustomUser
+from django.views import View
 
 
 class IndexView(TemplateView):
@@ -17,7 +18,7 @@ class CustomLoginView(LoginView):
     template_name = 'core/login.html'
     redirect_authenticated_user = True
 
-    def get_default_redirect_url(self):
+    def get_default_redirect_url(self, is_active=True, is_staff=True):
         user_id = self.request.user.id
         return reverse('core:user_profile', kwargs={'user_id': user_id})
 
@@ -32,6 +33,13 @@ class ProfileView(DetailView):
         context = super().get_context_data(**kwargs)
         context['header'] = f'Profile of {object.username}'
         return context
+
+
+class CustomLogoutView(LogoutView):
+    http_method_names = ['core', ]
+
+    def get_default_redirect_url(self):
+        return reverse('core:login')
 
 
 def user_login(request):
@@ -50,3 +58,39 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})
+
+
+class SignUpView(View):
+    template_name = 'core/signup.html'
+    form = SignUpForm
+
+    def get_context_data(self):
+        context = {
+            'form': self.form,
+        }
+        return context
+
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = self.form(request.POST, request.FILES)
+        context = self.get_context_data()
+        if form.is_valid():
+            user = form.save()
+            user_login(request, user)
+            return redirect('main:index')
+
+
+
+
+
+
+
+
+
+
+
+
+

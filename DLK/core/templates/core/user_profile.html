@@ -8,6 +8,7 @@
             <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css">
+            <link rel="stylesheet" href="{% static 'css/toys.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/user_profile.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/catalog.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/ContactUs.css' %}" type="text/css">
@@ -31,39 +32,41 @@
         <a class="header__link a" href="{% url 'ContactUs:index' %}">CONTACT US</a>
     </header>
     <main>
-        <section class="categories container">
-            <h2 class="categories__title">USER PROFILE</h2>
-            <div class="where__you__are_2">
-                <a class="categories__link a" href="{% url 'main:index' %}">Home</a>
-                <img class="categories__image" src="{% static 'img/arrow.png' %}" alt="arrow">
-                <p class="categories__description">User Profile</p>
+        <section class="where container">
+            <h1 class="where__title">USER PROFILE</h1>
+            <div class="first__wrap">
+                <a class="where__link a" href="{% url 'main:index' %}">Home</a>
+                <img class="where__image" src="{% static 'img/arrow.png' %}" alt="arrow">
+                <p class="where__description">User Profile</p>
             </div>
         </section>
         <section class="uzzer_data container">
-            <img class="user_avatar" src="{{ CustomUser.avatar.url }}" alt="avatar">
+            <div class="ava_edit">
+                <img class="user_avatar" src="{% static 'img/empty_avatar.png' %}" alt="avatar">
+                <button class="special__button_44 special__write">EDIT</button>
+            </div>
             <div class="name_and_stuff">
                 <ul class="data_list1">
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Name:</h2>
-                        <p class="user_settings">{{ CustomUser.username }}</p>
+                        <p class="user_settings">{{ customuser.username }}</p>
                     </li>
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Phone:</h2>
-                        <p class="user_settings">{{ CustomUser.phone }}</p>
+                        <p class="user_settings">{{ customuser.phone }}</p>
                     </li>
                 </ul>
                 <ul class="data_list2">
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Email:</h2>
-                        <p class="user_settings">{{ CustomUser.email }}</p>
+                        <p class="user_settings">{{ customuser.email }}</p>
                     </li>
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Password:</h2>
-                        <p class="user_settings">{{ CustomUser.password }}</p>
+                        <p class="user_settings">{{ customuser.about }}</p>
                     </li>
                 </ul>
             </div>
-            <button class="special__button_44 special__write">EDIT</button>
         </section>
     </main>
     <footer class="footer">
