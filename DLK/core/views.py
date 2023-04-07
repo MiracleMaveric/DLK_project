@@ -7,6 +7,7 @@ from django.views.generic import TemplateView, DetailView
 from .forms import LoginForm, SignUpForm
 from .models import CustomUser
 from django.views import View
+from django.contrib.auth import login
 
 
 class IndexView(TemplateView):
@@ -36,28 +37,10 @@ class ProfileView(DetailView):
 
 
 class CustomLogoutView(LogoutView):
-    http_method_names = ['core', ]
+    http_method_names = ['post', ]
 
     def get_default_redirect_url(self):
         return reverse('core:login')
-
-
-def user_login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(username=cd['username'], password=cd['password'])
-            if user is not None:
-                if user.is_active:
-                    return redirect('core/user_profile.html')
-                else:
-                    None
-            else:
-                return render(request, 'core/login.html')
-    else:
-        form = LoginForm()
-    return render(request, 'account/login.html', {'form': form})
 
 
 class SignUpView(View):
@@ -79,8 +62,10 @@ class SignUpView(View):
         context = self.get_context_data()
         if form.is_valid():
             user = form.save()
-            user_login(request, user)
+            login(request, user)
             return redirect('main:index')
+        else:
+            return render(request, self.template_name, context)
 
 
 
