@@ -22,6 +22,12 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.text55 {
+    width: 600px;
+    height: 125px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .popupup {
     position: absolute;
     top: 25%;

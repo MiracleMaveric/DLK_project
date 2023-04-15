@@ -7,7 +7,7 @@ class CustomUser(AbstractUser):
     birth_date = models.DateField(_('birth_date'), blank=True, null=True)
     about = models.TextField(max_length=150, blank=True)
     avatar = models.ImageField(upload_to='user_profile', blank=False)
-    friends = models.ManyToManyField('self', blank=True)
+    friends = models.ManyToManyField('self', blank=True, null=True)
 
     def __str__(self):
         return str(self.username)

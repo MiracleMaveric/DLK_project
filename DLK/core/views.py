@@ -67,15 +67,3 @@ class SignUpView(View):
         else:
             return render(request, self.template_name, context)
 
-
-
-
-
-
-
-
-
-
-
-
-
