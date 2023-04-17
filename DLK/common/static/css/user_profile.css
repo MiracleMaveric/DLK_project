@@ -34,7 +34,7 @@
 
 .name_and_stuff {
     display: flex;
-    margin-left: -80px;
+    margin-left: 70px;
 }
 
 .data_list1 {
@@ -53,10 +53,10 @@
     padding-right: 26px;
     background: #000000;
     bottom: -40px;
-    right: 135px;
 }
 
 .user_settings {
+    margin-left: 70px;
     padding-left: 40px;
     padding-right: 80px;
     padding-top: 9px;
@@ -70,3 +70,7 @@
     line-height: 34px;
 }
 
+.ava {
+    width: 20px;
+    height: 20px;
+}

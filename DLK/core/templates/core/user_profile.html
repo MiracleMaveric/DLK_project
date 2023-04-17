@@ -12,6 +12,7 @@
             <link rel="stylesheet" href="{% static 'css/user_profile.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/catalog.css' %}" type="text/css">
             <link rel="stylesheet" href="{% static 'css/ContactUs.css' %}" type="text/css">
+            <link rel="stylesheet" href="{% static 'css/another.css' %}" type="text/css">
         {% endblock static_files %}
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +43,7 @@
         </section>
         <section class="uzzer_data container">
             <div class="ava_edit">
-                <img class="user_avatar" src="{% static 'img/empty_avatar.png' %}" alt="avatar">
+                <div><img class="ava" style="height: 200px; width: 180px;" src="{{ customuser.avatar.url }}" alt="avatar"></div>
                 <button class="special__button_44 special__write">EDIT</button>
             </div>
             <div class="name_and_stuff">

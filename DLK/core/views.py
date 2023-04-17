@@ -60,10 +60,12 @@ class SignUpView(View):
     def post(self, request, *args, **kwargs):
         form = self.form(request.POST, request.FILES)
         context = self.get_context_data()
+        context['form'] = form
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('main:index')
+            user_id = self.request.user.id
+            return redirect(reverse('core:user_profile', kwargs={'user_id': user.id}))
         else:
             return render(request, self.template_name, context)
 

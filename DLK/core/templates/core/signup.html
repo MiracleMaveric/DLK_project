@@ -22,34 +22,42 @@
         <div class="fadede">
             <form action="{% url 'core:signup' %}" method="POST" enctype="multipart/form-data" class="userdatata">
                 {% csrf_token %}
+                {{ form.non_field_errors }}
                 <h2 class="greeting">Welcome!</h2>
                 <div class="last_wrapap">
+                    {{ form.username.errors }}
                     <label class="userdata___frame otstupup" for="username1">Username</label>
-                    <input class="text11" type="text" name="username" id="username1">
+                    {{ form.username }}
                 </div>
                 <div class="last_wrapap">
+                    {{ form.first_name.errors }}
                     <label class="userdata___frame" for="username2">First name</label>
-                    <input class="text44" type="text" name="first_name" id="username2">
+                    {{ form.first_name }}
                 </div>
                 <div class="last_wrapap">
+                    {{ form.last_name.errors }}
                     <label class="userdata___frame" for="username3">Last name</label>
-                    <input class="text44" type="text" name="last_name" id="username3">
+                    {{ form.last_name }}
                 </div>
                 <div class="last_wrapap">
+                    {{ form.birth_date.errors }}
                     <label class="userdata___frame" for="username4">Birth date</label>
-                    <input class="text44" type="date" name="birth_date" id="username4">
+                    {{ form.birth_date }}
                 </div>
                 <div class="photo_wrap">
+                    {{ form.avatar.errors }}
                     <label class="userdata___frame" for="username6">Avatar</label>
-                    <input class="special__write" type="file" name="avatar" id="username6">
+                    {{ form.avatar }}
                 </div>
                 <div class="last_wrapap">
+                    {{ form.username7.errors }}
                     <label class="userdata___frame" for="username7">Password</label>
-                    <input class="text44" type="password" name="password" id="username7">
+                    <input class="text44" type="password" name="password1" id="username7">
                 </div>
                 <div class="last_wrapap">
+                    {{ form.username8.errors }}
                     <label class="userdata___frame" for="username8">Repeat password</label>
-                    <input class="text44" type="password" name="password" id="username8">
+                    <input class="text44" type="password" name="password2" id="username8">
                 </div>
                 <div class="neededed"><button class="special__button special__write button_wrapapap bub" type="submit">SUBMIT</button></div>
             </form>
