@@ -56,7 +56,6 @@
 }
 
 .user_settings {
-    margin-left: 70px;
     padding-left: 40px;
     padding-right: 80px;
     padding-top: 9px;
@@ -70,7 +69,3 @@
     line-height: 34px;
 }
 
-.ava {
-    width: 20px;
-    height: 20px;
-}
