@@ -27,6 +27,7 @@
             <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'blog:index' %}">BLOG</a></li>
             <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'catalog:index' %}">CATALOG</a></li>
             <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'toys:index' %}">TOYS</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="{% if request.user.is_authenticated %}{% url 'core:user_profile' user_id=request.user.id %}{% else %}{% url 'core:suggestion' %}{% endif %}">USER PROFILE</a></li>
             <li class="header__list__item undotted"><a class="header__list__link a" href="#">ABOUT US</a></li>
         </ul>
         <img class="header__image" src="{% static 'img/Loupe.png' %}" alt="search">
@@ -43,7 +44,7 @@
         </section>
         <section class="uzzer_data container">
             <div class="ava_edit">
-                <div><img class="ava" style="height: 200px; width: 180px;" src="{{ customuser.avatar.url }}" alt="avatar"></div>
+                <div><img class="ava" style="height: 200px; width: 200px;" src="{{ customuser.avatar.url }}" alt="avatar"></div>
                 <button class="special__button_44 special__write">EDIT</button>
             </div>
             <div class="name_and_stuff">
