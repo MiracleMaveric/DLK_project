@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block static_files %}
+        <link rel="stylesheet" href="{% static 'css/common.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/toys.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/registration.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/suggestion.css' %}" type="text/css">
+    {% endblock static_files %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="popupup">
+        <div class="fadede">
+            <div class="suggestion_block">
+                <h2 class="greeting">You haven't authenticated yet, but that's ok)<br>You can sign up if you're new user or log in if you've already joined our party<br>and have an account!</h2>
+                <div class="buttons">
+                    <a class="special__button special__write shish a" href="{% url 'core:login' %}">I already have an account</a>
+                    <a class="special__button special__write shish a" href="{% url 'core:signup' %}">I'm a new user and I want to join the party!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

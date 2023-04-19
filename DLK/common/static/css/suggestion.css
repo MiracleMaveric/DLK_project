@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.suggestion_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background: #F3D0DB;
+    position: absolute;
+    width: 450px;
+    height: 250px;
+    left: 50%;
+    top: 50%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: -125px 0 0 -125px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.shish {
+    text-align: center;
+}

@@ -14,6 +14,10 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
+class SuggestionView(TemplateView):
+    template_name = 'suggestion.html'
+
+
 class CustomLoginView(LoginView):
     form_class = LoginForm
     template_name = 'core/login.html'

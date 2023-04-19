@@ -22,8 +22,8 @@
             <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'blog:index' %}">BLOG</a></li>
             <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'catalog:index' %}">CATALOG</a></li>
             <li class="header__list__item undotted"><a class="header__list__link a" href="{% url 'toys:index' %}">TOYS</a></li>
+            <li class="header__list__item undotted"><a class="header__list__link a" href="{% if request.user.is_authenticated %}{% url 'core:user_profile' user_id=request.user.id %}{% else %}{% url 'core:login' %}{% endif %}">USER PROFILE</a></li>
             <li class="header__list__item undotted"><a class="header__list__link a" href="#">ABOUT US</a></li>
-            <li class="header__list__item undotted"><a class="header__list__link a" href="./User profile.html">USER PROFILE</a></li>
         </ul>
         <img class="header__image" src="{% static 'img/Loupe.png' %}" alt="search">
         <a class="header__link a" href="{% url 'ContactUs:index' %}">CONTACT US</a>

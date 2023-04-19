@@ -54,17 +54,29 @@
                     </li>
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Phone:</h2>
-                        <p class="user_settings">{{ customuser.phone }}</p>
+                        {% if customuser.phone %}
+                            <p class="user_settings">{{ customuser.phone }}</p>
+                        {% else %}
+                            <p class="user_settings">Add your phone in settings!</p>
+                        {% endif %}
                     </li>
                 </ul>
                 <ul class="data_list2">
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Email:</h2>
-                        <p class="user_settings">{{ customuser.email }}</p>
+                        {% if customuser.email %}
+                            <p class="user_settings">{{ customuser.email }}</p>
+                        {% else %}
+                            <p class="user_settings">Add your email in settings!</p>
+                        {% endif %}
                     </li>
                     <li class="data_list_item undotted">
-                        <h2 class="banner__list__button__main_2">Password:</h2>
-                        <p class="user_settings">{{ customuser.about }}</p>
+                        <h2 class="banner__list__button__main_2">About:</h2>
+                        {% if customuser.email %}
+                            <p class="user_settings">{{ customuser.about }}</p>
+                        {% else %}
+                            <p class="user_settings">Tell us about yourself!!</p>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
