@@ -44,14 +44,41 @@
         </section>
         <section class="uzzer_data container">
             <div class="ava_edit">
-                <div><img class="ava" style="height: 200px; width: 200px;" src="{{ customuser.avatar.url }}" alt="avatar"></div>
-                <button class="special__button_44 special__write">EDIT</button>
+                <div><img class="ava" style="height: 200px; width: 200px;" src="{% if customuser.avatar %}{{ customuser.avatar.url }}{% else %}{% static 'img/empty_avatar.png' %}{% endif %}" alt="avatar"></div>
+                <a class="special__button_44 special__write a" href="{% url 'core:edit_profile' user_id=request.user.id %}">EDIT</a>
+                <a class="special__button_444 special__write a" href="{% url 'core:logout' %}">LOG OUT</a>
             </div>
             <div class="name_and_stuff">
                 <ul class="data_list1">
                     <li class="data_list_item undotted">
-                        <h2 class="banner__list__button__main_2">Name:</h2>
+                        <h2 class="banner__list__button__main_2">Username:</h2>
                         <p class="user_settings">{{ customuser.username }}</p>
+                    </li>
+                    <li class="data_list_item undotted">
+                        <h2 class="banner__list__button__main_2">First Name:</h2>
+                        {% if customuser.first_name %}
+                            <p class="user_settings">{{ customuser.first_name }}</p>
+                        {% else %}
+                            <p class="user_settings">Add your first name in settings!</p>
+                        {% endif %}
+                    </li>
+                    <li class="data_list_item undotted">
+                        <h2 class="banner__list__button__main_2">Last Name:</h2>
+                        {% if customuser.last_name %}
+                            <p class="user_settings">{{ customuser.last_name }}</p>
+                        {% else %}
+                            <p class="user_settings">Add your last name in settings!</p>
+                        {% endif %}
+                    </li>
+                </ul>
+                <ul class="data_list2">
+                    <li class="data_list_item undotted">
+                        <h2 class="banner__list__button__main_2">Birthdate:</h2>
+                        {% if customuser.birth_date %}
+                            <p class="user_settings">{{ customuser.birth_date }}</p>
+                        {% else %}
+                            <p class="user_settings">Add your birthdate in settings!</p>
+                        {% endif %}
                     </li>
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Phone:</h2>
@@ -61,22 +88,12 @@
                             <p class="user_settings">Add your phone in settings!</p>
                         {% endif %}
                     </li>
-                </ul>
-                <ul class="data_list2">
                     <li class="data_list_item undotted">
                         <h2 class="banner__list__button__main_2">Email:</h2>
                         {% if customuser.email %}
                             <p class="user_settings">{{ customuser.email }}</p>
                         {% else %}
                             <p class="user_settings">Add your email in settings!</p>
-                        {% endif %}
-                    </li>
-                    <li class="data_list_item undotted">
-                        <h2 class="banner__list__button__main_2">About:</h2>
-                        {% if customuser.email %}
-                            <p class="user_settings">{{ customuser.about }}</p>
-                        {% else %}
-                            <p class="user_settings">Tell us about yourself!!</p>
                         {% endif %}
                     </li>
                 </ul>
