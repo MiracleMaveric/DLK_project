@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetCompleteView, \
+    PasswordResetDoneView, PasswordResetConfirmView
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -81,7 +82,7 @@ class ProfileEditView(UpdateView):
     model = CustomUser
     template_name = 'core/edit_profile.html'
     pk_url_kwarg = 'user_id'
-    fields = ['username', 'first_name', 'last_name', 'phone', 'email', 'avatar', 'password']
+    fields = ['username', 'first_name', 'last_name', 'birth_date', 'phone', 'email', 'avatar']
 
     def get_context_data(self, **kwargs):
         object = self.get_object()
@@ -99,3 +100,24 @@ class ProfileEditView(UpdateView):
         if object != request.user:
             raise PermissionDenied('You can not edit a profile which does not belong to you')
         return super().dispatch(request, *args, **kwargs)
+
+
+class CustomPasswordResetView(PasswordResetView):
+    success_url = reverse_lazy("core:password_reset_done")
+    template_name = "core/password_reset/password_reset_form.html"
+    email_template_name = "core/password_reset/password_reset_email.html"
+    subject_template_name = "core/password_reset/subject_template_name.txt"
+
+
+class CustomPasswordResetViewDone(PasswordResetDoneView):
+    template_name = "core/password_reset/password_reset_done.html"
+
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    success_url = reverse_lazy("core:password_reset_complete")
+
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = "core/password_reset/password_reset_complete.html"
+
+

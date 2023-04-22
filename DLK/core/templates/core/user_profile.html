@@ -46,7 +46,14 @@
             <div class="ava_edit">
                 <div><img class="ava" style="height: 200px; width: 200px;" src="{% if customuser.avatar %}{{ customuser.avatar.url }}{% else %}{% static 'img/empty_avatar.png' %}{% endif %}" alt="avatar"></div>
                 <a class="special__button_44 special__write a" href="{% url 'core:edit_profile' user_id=request.user.id %}">EDIT</a>
-                <a class="special__button_444 special__write a" href="{% url 'core:logout' %}">LOG OUT</a>
+                <form action="{% url 'core:password_reset' user_id=request.user.id %}" method="post" class="logout_form">
+                    {% csrf_token %}
+                    <button type="submit" class="special__button_444 special__write">CHANGE PASSWORD</button>
+                </form>
+                <form action="{% url 'core:logout' %}" method="post" class="logout_form">
+                    {% csrf_token %}
+                    <button type="submit" class="special__button_444 special__write">LOG OUT</button>
+                </form>
             </div>
             <div class="name_and_stuff">
                 <ul class="data_list1">

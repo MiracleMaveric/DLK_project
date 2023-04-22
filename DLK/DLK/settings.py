@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'catalog',
     'toys',
     'ContactUs',
+    'post',
 ]
 
 AUTH_USER_MODEL = 'core.CustomUser'
