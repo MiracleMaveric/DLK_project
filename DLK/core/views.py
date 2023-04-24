@@ -1,11 +1,9 @@
-from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetCompleteView, \
-    PasswordResetDoneView, PasswordResetConfirmView
+from django.contrib.auth.forms import SetPasswordForm
+from django.contrib.auth.views import LoginView, LogoutView
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, DetailView, UpdateView
 from .forms import LoginForm, SignUpForm
@@ -102,22 +100,28 @@ class ProfileEditView(UpdateView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class CustomPasswordResetView(PasswordResetView):
-    success_url = reverse_lazy("core:password_reset_done")
+class CustomPasswordResetView(UpdateView):
     template_name = "core/password_reset/password_reset_form.html"
-    email_template_name = "core/password_reset/password_reset_email.html"
-    subject_template_name = "core/password_reset/subject_template_name.txt"
+    form_class = SetPasswordForm
+    model = CustomUser
 
+    def get_success_url(self):
+        return reverse_lazy("core:login")
 
-class CustomPasswordResetViewDone(PasswordResetDoneView):
-    template_name = "core/password_reset/password_reset_done.html"
+    def get_object(self, *args, **kwargs):
+        return self.request.user
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(self.object)
+        return self.render_to_response({'form': form})
 
-class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    success_url = reverse_lazy("core:password_reset_complete")
-
-
-class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = "core/password_reset/password_reset_complete.html"
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.form_class(self.object, request.POST)
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
 

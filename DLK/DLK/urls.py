@@ -14,7 +14,6 @@ urlpatterns = [
     path('ContactUs/', include('ContactUs.urls')),
     path('core/', include('core.urls')),
     path('favicon.ico', RedirectView.as_view(url='/static/img/empty_avatar.png')),
-    path('post/', include('post.urls')),
 ]
 
 if settings.DEBUG:
